@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>vue-slider</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div id="container">
+        <div class="prev">
+            <i class="fas fa-arrow-left" @click="prev_image"></i>
+        </div>
+        <div class="slides">
+            <img :src="immagini[n_img]" alt="immagini">
+        </div>
+        <div class="next" @click="next_image">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+        <div class="nav_circle">
+                <i v-for="(imaggine, index) in immagini"
+                v-bind:class="['far fa-circle', index === n_img ? 'active' : '']" @click="set_image(index)"></i>
+            </div>
+    </div>
+
+ <script src="myscript.js" charset="utf-8"></script>
+    </body>
+</html>
